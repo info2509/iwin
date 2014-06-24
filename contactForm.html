@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+   	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="jquery/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+	$("#submit").click(function(){	
+
+	//specify where to post
+	var postTo="http://skybuilder.net/cf/process.php?appId=16491868334f5efe416da432.66391647";
+	
+	//get the info to post
+	var field0Val=$("#field0").val();var field1Val=$("#field1").val();var field2Val=$("#field2").val();var field3Val=$("#field3").val();
+
+//post
+$.post(postTo, { field0: field0Val,field1: field1Val,field2: field2Val,field3: field3Val } );
+
+//change submit button to thank you
+document.getElementById('sendEmail').innerHTML = "<p>Thank for your submission.</p>";
+
+		return false;
+	});						   
+});
+ </script>
+</head>
+<body>
+<div data-role="page" data-add-back-btn="true">
+<div data-role="header">
+<h1>Contact</h1> 
+</div> 
+<div data-role="content">
+<form action="contactForm.html" method="post" id="sendEmail"><div data-role="fieldcontain">
+<label for="field0">Name:</label>
+<input type="text" name="field0" id="field0" value="" />
+</div><div data-role="fieldcontain">
+<label for="field1">Contact Number:</label>
+<input type="text" name="field1" id="field1" value="" />
+</div><div data-role="fieldcontain">
+<label for="field2">Email Address:</label>
+<input type="text" name="field2" id="field2" value="" />
+</div><div data-role="fieldcontain">
+<label for="field3">Query:</label>
+	<textarea name="field3" id="field3"></textarea>
+</div><div id="submitButton"><input type="submit" value="Submit" id="submit" name="submit"/></div></form>
+</div><!-- /content -->
+<style>	.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; width: 60px!important;}		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }#tab1 .ui-icon { background:  url("64Px-504-0.png") 25% 25% no-repeat; background-size: 30px 30px; }#tab2 .ui-icon { background:  url("64Px-504-86.png") 25% 25% no-repeat; background-size: 30px 30px; }#tab3 .ui-icon { background:  url("64Px-504-11.png") 25% 25% no-repeat; background-size: 30px 30px; }#tab4 .ui-icon { background:  url("64Px-504-210.png") 25% 25% no-repeat; background-size: 30px 30px; }#tab5 .ui-icon { background:  url("more.png") 25% 25% no-repeat; background-size: 30px 30px; }</style><div data-role="footer" class="nav-glyphish-example" data-position="fixed" data-id="myfooter" data-theme="a" data-tap-toggle="false">		<div data-role="navbar" class="nav-glyphish-example"><ul><li><a href="blogFeeds.html" id="tab1" data-icon="custom" rel="external">Blog</a></li><li><a href="news.html" id="tab2" data-icon="custom" rel="external">News</a></li><li><a href="events.html" id="tab3" data-icon="custom" rel="external">Events</a></li><li><a href="deals.html" id="tab4" data-icon="custom" rel="external">Deals</a></li><li><a href="more.html" id="tab5" data-icon="custom" rel="external">More</a></li></ul></div></div>
+</div>	
+</body>
+</html>

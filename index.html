@@ -1,0 +1,150 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" href="theme.css" />
+        <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.2.0.min.js"></script>
+                        
+        <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+                        <script type="text/javascript">
+	                        
+         $(document).ready(function() {
+ 
+            
+     //    alert("1");
+             document.addEventListener("deviceready",onDeviceReadyChildBrowser,false);
+             //onDeviceReadyChildBrowser();
+         });
+                
+
+    
+         function onDeviceReadyChildBrowser() {
+       //  alert("2");
+            $("a.open-child-browser").click(function() {
+                 var goUrl = $(this).attr("data-gourl");
+                 window.plugins.childBrowser.showWebPage(goUrl, { showLocationBar: true });
+                 return false;
+             });
+                        
+             $("a.open-external-browser").click(function() {
+            // alert("3");
+                 var goUrl = $(this).attr("data-gourl");
+             //    alert(goUrl);
+                 window.plugins.childBrowser.openExternal(goUrl);
+                 return false;
+             });
+         }
+                        
+     </script>
+     <script type="text/javascript">
+             
+                function resizeRssImages() {
+                    var screenWidth = window.innerWidth;
+                    $("img.rss-image").each(function (i,e) {
+                        var imgWidth = $(this).width();
+                console.log("RSS_WIDTH_SCREEN: " + screenWidth);
+                console.log("RSS_WIDTH_IMAGE: " + imgWidth);
+                        if(imgWidth > screenWidth) {
+                            $(this).css("width","95%");
+                        }
+                    });
+                }
+                
+                function htmlspecialchars_decode (string, quote_style) {
+
+  var optTemp = 0,
+    i = 0,
+    noquotes = false;
+  if (typeof quote_style === 'undefined') {
+    quote_style = 2;
+  }
+  string = string.toString().replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  var OPTS = {
+    'ENT_NOQUOTES': 0,
+    'ENT_HTML_QUOTE_SINGLE': 1,
+    'ENT_HTML_QUOTE_DOUBLE': 2,
+    'ENT_COMPAT': 2,
+    'ENT_QUOTES': 3,
+    'ENT_IGNORE': 4
+  };
+  if (quote_style === 0) {
+    noquotes = true;
+  }
+  if (typeof quote_style !== 'number') { // Allow for a single string or an array of string flags
+    quote_style = [].concat(quote_style);
+    for (i = 0; i < quote_style.length; i++) {
+      // Resolve string input to bitwise e.g. 'PATHINFO_EXTENSION' becomes 4
+      if (OPTS[quote_style[i]] === 0) {
+        noquotes = true;
+      } else if (OPTS[quote_style[i]]) {
+        optTemp = optTemp | OPTS[quote_style[i]];
+      }
+    }
+    quote_style = optTemp;
+  }
+  if (quote_style & OPTS.ENT_HTML_QUOTE_SINGLE) {
+    string = string.replace(/&#0*39;/g, "'"); // PHP doesn't currently escape if more than one 0, but it should
+    // string = string.replace(/&apos;|&#x0*27;/g, "'"); // This would also be useful here, but not a part of PHP
+  }
+  if (!noquotes) {
+    string = string.replace(/&quot;/g, '"');
+  }
+  // Put this in last place to avoid escape being double-decoded
+  string = string.replace(/&amp;/g, '&');
+
+  return string;
+}
+                
+             </script>
+	<style type="text/css">
+	                body {
+    background: url("iwin.png");
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+	.ui-page {
+		background: url("iwin.png");
+		background-size:100% 100%;
+		background-image: url("iwin.png");
+background-repeat:no-repeat;
+	}
+</style>
+    <script type="text/javascript">
+		                
+    $(document).ready(function() {
+    document.body.addEventListener('touchmove', function(e) {
+                    e.preventDefault();
+                }, false);
+        $(".ui-page").css("background","url(\"iwin.png\")");
+        $(".ui-page").css("backgroundImage","url(\"iwin.png\")");
+        $(".ui-page").css("backgroundSize","100% 100%");
+    });
+    </script>
+</head>
+<body>
+
+
+<div data-role="page">
+
+<div data-role="header">
+        <div class="ui-bar ui-bar-a"><center><h1>Game Đánh Bài iWin</h1></center>
+        </div>
+    </div>
+
+<div data-role="content" id="contentBody">
+
+
+
+</div><!-- /content -->
+
+
+<style> .nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; width: 60px!important;}		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }#tab1 .ui-icon { background:  url("icons_game.png") 50% 50% no-repeat; background-size: 50px 50px; }#tab2 .ui-icon { background:  url("home.png") 50% 50% no-repeat; background-size: 30px 30px; }#tab3 .ui-icon { background:  url("icons_food.png") 50% 50% no-repeat; background-size: 50px 50px; }</style><div data-role="footer" data-position="fixed" class="nav-glyphish-example" data-id="myfooter" data-theme="a" data-tap-toggle="false">		<div data-role="navbar" class="nav-glyphish-example"><ul><li><a href="http://d.clix.vn/itcorp/iwin" id="tab1" data-icon="custom" rel="external"  class="open-external-browser" data-gourl="http://d.clix.vn/itcorp/iwin">PLAY</a></li><li><a href="http://itcorp.toiplay.com/" id="tab2" data-icon="custom" rel="external"  class="open-external-browser" data-gourl="http://itcorp.toiplay.com/">FREE</a></li></ul></div></div>
+</div>	
+</body>
+</html>
